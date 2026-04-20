@@ -384,7 +384,10 @@ body {
 .user-name { font-weight: 600; font-size: 14px; }
 .user-notif { margin-left: auto; cursor: pointer; }
 
-.sidebar-nav { flex: 1; }
+.sidebar-nav { 
+    flex: 1; 
+    overflow-y: auto;
+}
 .nav-item {
     padding: 12px 15px;
     border-radius: 12px;
