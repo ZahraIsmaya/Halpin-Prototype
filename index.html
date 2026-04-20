@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HALPIN – Investasi Properti Syariah Digital</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Overlay untuk tutup sidebar di mobile -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<div id="landing" class="page active">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo" onclick="showPage('landing')">
+                <img src="asset/logo.png" alt="HALPIN Logo" class="logo-img">
+            </div>
+            <div class="nav-links">
+                <a onclick="showPage('landing')">Beranda</a>
+                <a onclick="showPage('marketplace-page')">Marketplace</a>
+                <a class="has-arrow">PINA AI</a>
+                <a>Tentang Kami</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-text" onclick="openModal('login')">Masuk</button>
+                <button class="btn-filled" onclick="openModal('register')">Daftar</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="section-tag">Welcome to HALPIN</div>
+                <h1 class="hero-title">
+                    Halal Property<br>Tokenization and<br>Personalized<br><em>Investment Navigator</em>
+                </h1>
+                <p class="hero-desc">
+                    HALPIN menggabungkan AI Personalized (PINA) sebagai navigator edukatif interaktif yang mendampingi investor, serta memberikan literasi fiqih muamalah yang mendalam.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-filled btn-large" onclick="openModal('register')">Mulai Investasi</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="asset/icon landing.png" alt="Icon Landing HALPIN" class="hero-img-lokal">
+            </div>
+        </div>
+    </section>
+
+    <div class="features-row">
+        <div class="feature-card">
+            <div class="feature-icon-box">
+                <img src="asset/pina.png" alt="PINA Logo" class="feature-img-icon">
+            </div>
+            <div class="feature-title">PINA AI</div>
+            <div class="feature-desc">Asisten cerdas berbasis NLP untuk panduan investasi dan edukasi fikih muamalah secara personal.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-box bg-orange">📜</div>
+            <div class="feature-title">Auto Zakat 2,5%</div>
+            <div class="feature-desc">Purifikasi otomatis melalui Smart Contract saat mencapai nishab dan haul demi keberkahan harta.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-box bg-blue">🏠</div>
+            <div class="feature-title">Kepemilikan Aset Nyata</div>
+            <div class="feature-desc">Tokenisasi RWA yang memastikan setiap modal Anda didukung oleh aset properti fisik yang produktif dan halal.</div>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <div class="section-tag">CARA KERJA</div>
+        <h2 class="section-title">Mulai Investasi Halal dalam 4 Langkah</h2>
+        <p class="section-sub">Proses yang mudah, transparan, dan sesuai syariah untuk semua kalangan investor.</p>
+        
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-num">01</div>
+                <div class="step-icon">👤</div>
+                <div class="step-title">Daftar & Verifikasi</div>
+                <div class="step-desc">Buat akun, lengkapi KYC, dan verifikasi identitas Anda dengan aman.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">02</div>
+                <div class="step-icon">🔍</div>
+                <div class="step-title">Pilih Properti</div>
+                <div class="step-desc">Jelajahi 100+ properti syariah dengan detail lengkap dan sertifikat halal.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">03</div>
+                <div class="step-icon">🪙</div>
+                <div class="step-title">Beli Token</div>
+                <div class="step-desc">Investasi mulai dari Rp 100 ribu dengan membeli token properti digital.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">04</div>
+                <div class="step-icon">📈</div>
+                <div class="step-title">Terima Hasil</div>
+                <div class="step-desc">Nikmati bagi hasil otomatis bulanan dan pantau portofolio via dashboard.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-banner">
+        <h2>Mulai Perjalanan Investasi Halal Anda Hari Ini</h2>
+        <p>Bergabung dengan ribuan investor yang sudah membangun kekayaan berkah bersama HALPIN.</p>
+        <button class="btn-white" onclick="openModal('register')">Daftar Gratis Sekarang</button>
+        
+        <div class="pina-float">
+            <span class="pina-text">Tanya PINA</span>
+            <div class="pina-circle">
+                <img src="asset/pina.png" alt="PINA" class="pina-img-small">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dashboard-page" class="page">
+    <div class="app-layout">
+        <aside class="sidebar"><button class="sidebar-close-btn" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-top">
+                <img src="asset/logo.png" alt="HALPIN" class="sidebar-logo-img">
+                <div class="user-profile">
+                    <div class="user-avatar">SA</div>
+                    <div class="user-info">
+                        <span class="user-name">Siti Aisyah</span>
+                        <span class="user-notif">🔔</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-item active" onclick="showPage('dashboard-page')">Dashboard</div>
+                <div class="nav-item" onclick="showPage('marketplace-page')">Marketplace</div>
+                <div class="nav-item" onclick="showPage('dompet-page')">Dompet & Transaksi</div>
+                <div class="nav-item" onclick="showPage('autozakat-page')">Auto Zakat</div>
+                <div class="nav-item" onclick="showPage('pengaturan-page')">Pengaturan</div>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="nav-item logout hero-badge" onclick="showPage('landing')">Logout</div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="mobile-topbar">
+                <button class="hamburger-btn" onclick="openSidebar()">☰</button>
+                <span class="mobile-title">Dashboard</span>
+            </div>
+            <header class="dash-header">
+                <div class="dash-header-left">
+                    <button class="hamburger-btn" onclick="openSidebar()">☰</button>
+
+                    <div class="header-title">
+                        <h1>DASHBOARD</h1>
+                        <p>Rabu, 1 April 2026</p>
+                    </div>
+                </div>
+                <button class="btn-filled" onclick="showPage('marketplace-page')">+ Tambah Investasi</button>
+            </header>
+
+            <div class="dash-grid-top">
+                <div class="stat-card">
+                    <span class="stat-label">TOTAL ASSET</span>
+                    <h2 class="stat-value">Rp 48,5 Jt</h2>
+                    <span class="stat-change up">↗ 12.4% bulan ini</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">YIELD BERJALAN</span>
+                    <h2 class="stat-value">8,7%</h2>
+                    <span class="stat-change up">↗ p.a rata-rata</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">TOKEN DIMILIKI</span>
+                    <h2 class="stat-value">3 Properti</h2>
+                    <span class="stat-change">232 token aktif</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">ZAKAT</span>
+                    <h2 class="stat-value">Rp 1,2 Jt</h2>
+                    <span class="stat-change green">✓ Otomatis disalurkan</span>
+                </div>
+            </div>
+
+            <div class="dash-grid-middle">
+                <section class="perf-section">
+                    <div class="section-header">
+                        <h2>Property Performance</h2>
+                        <a class="link-orange" onclick="showPage('marketplace-page')">Lihat semua</a>
+                    </div>
+                    <div class="perf-list">
+                        <div class="perf-item">
+                            <div class="perf-icon">🏠</div>
+                            <div class="perf-info">
+                                <h3>Villa Mutiara Sawarna</h3>
+                                <p>Banten · 120 token</p>
+                            </div>
+                            <div class="perf-progress">
+                                <div class="perf-progress-label"><span>Terisi</span><span>92%</span></div>
+                                <div class="progress-bar"><div class="fill" style="width:92%"></div></div>
+                            </div>
+                            <div class="perf-yield">9,2% <span>yield p.a.</span></div>
+                        </div>
+                        <div class="perf-item">
+                            <div class="perf-icon">🏠</div>
+                            <div class="perf-info">
+                                <h3>The Renhart</h3>
+                                <p>Banten · 80 token</p>
+                            </div>
+                            <div class="perf-progress">
+                                <div class="perf-progress-label"><span>Terisi</span><span>100%</span></div>
+                                <div class="progress-bar"><div class="fill" style="width:100%"></div></div>
+                            </div>
+                            <div class="perf-yield">8,1% <span>yield p.a.</span></div>
+                        </div>
+                        <div class="perf-item">
+                            <div class="perf-icon">🏠</div>
+                            <div class="perf-info">
+                                <h3>Geon Villa</h3>
+                                <p>Banten · 47 token</p>
+                            </div>
+                            <div class="perf-progress">
+                                <div class="perf-progress-label"><span>Terisi</span><span>74%</span></div>
+                                <div class="progress-bar"><div class="fill fill-yellow" style="width:74%"></div></div>
+                            </div>
+                            <div class="perf-yield">7,8% <span>yield p.a.</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="zakat-section">
+                    <h2>Auto Zakat</h2>
+                    <div class="zakat-card-inner">
+                        <h3>AUTO ZAKAT</h3>
+                        <div class="donut-chart">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="bg" cx="50" cy="50" r="40"></circle>
+                                <circle class="prog" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="donut-text">
+                                <span class="small">Auto</span>
+                                <span class="big">2,5%</span>
+                            </div>
+                        </div>
+                        <div class="zakat-info">
+                            <div class="zakat-row"><span class="zakat-lbl">Total dipotong</span><span class="zakat-val green">Rp 1.215.000</span></div>
+                            <hr class="zakat-divider">
+                            <div class="zakat-row"><span class="zakat-lbl">Disalurkan ke</span><span class="zakat-val">BAZNAS</span></div>
+                            <div class="zakat-row"><span class="zakat-lbl">Haul berjalan</span><span class="zakat-val">9 bulan</span></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Segera Habis -->
+            <section class="segera-section">
+                <div class="section-header">
+                    <h2>Segera Habis!</h2>
+                    <a class="link-orange" onclick="showPage('marketplace-page')">Lihat semua</a>
+                </div>
+                <div class="mini-cards-scroll">
+                    <div class="mini-prop-card">
+                        <div class="mini-prop-img" style="background:linear-gradient(135deg,#74b9ff,#0984e3)">
+                            <div class="token-badge">10 token tersedia</div>
+                            <div class="mini-prop-specs">
+                                <span>🛏 3</span><span>🚿 2</span><span>📐 1950m²</span>
+                            </div>
+                        </div>
+                        <div class="mini-prop-body">
+                            <div class="mini-prop-name">Abah House</div>
+                            <div class="mini-prop-loc">📍 Anyer, Banten</div>
+                            <button class="btn-beli" onclick="showToast('Token Abah House berhasil dipesan! 🎉')">Beli Token</button>
+                        </div>
+                    </div>
+                    <div class="mini-prop-card">
+                        <div class="mini-prop-img" style="background:linear-gradient(135deg,#55efc4,#00b894)">
+                            <div class="token-badge">10 token tersedia</div>
+                            <div class="mini-prop-specs">
+                                <span>🛏 3</span><span>🚿 2</span><span>📐 1950m²</span>
+                            </div>
+                        </div>
+                        <div class="mini-prop-body">
+                            <div class="mini-prop-name">Sawarna Home</div>
+                            <div class="mini-prop-loc">📍 Lebak, Banten</div>
+                            <button class="btn-beli" onclick="showToast('Token Sawarna Home berhasil dipesan! 🎉')">Beli Token</button>
+                        </div>
+                    </div>
+                    <div class="mini-prop-card">
+                        <div class="mini-prop-img" style="background:linear-gradient(135deg,#fd79a8,#e84393)">
+                            <div class="token-badge">10 token tersedia</div>
+                            <div class="mini-prop-specs">
+                                <span>🛏 3</span><span>🚿 2</span><span>📐 1950m²</span>
+                            </div>
+                        </div>
+                        <div class="mini-prop-body">
+                            <div class="mini-prop-name">Anyer Beach</div>
+                            <div class="mini-prop-loc">📍 Anyer, Banten</div>
+                            <button class="btn-beli" onclick="showToast('Token Anyer Beach berhasil dipesan! 🎉')">Beli Token</button>
+                        </div>
+                    </div>
+                    <div class="mini-prop-card">
+                        <div class="mini-prop-img" style="background:linear-gradient(135deg,#fdcb6e,#e17055)">
+                            <div class="token-badge">10 token tersedia</div>
+                            <div class="mini-prop-specs">
+                                <span>🛏 3</span><span>🚿 2</span><span>📐 1950m²</span>
+                            </div>
+                        </div>
+                        <div class="mini-prop-body">
+                            <div class="mini-prop-name">Nyenyak TL</div>
+                            <div class="mini-prop-loc">📍 Tanjung Lesung, Banten</div>
+                            <button class="btn-beli" onclick="showToast('Token Nyenyak TL berhasil dipesan! 🎉')">Beli Token</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<!-- MARKETPLACE PAGE -->
+<div id="marketplace-page" class="page">
+    <div class="app-layout">
+        <aside class="sidebar"><button class="sidebar-close-btn" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-top">
+                <img src="asset/logo.png" alt="HALPIN" class="sidebar-logo-img">
+                <div class="user-profile">
+                    <div class="user-avatar">SA</div>
+                    <div class="user-info">
+                        <span class="user-name">Siti Aisyah</span>
+                        <span class="user-notif">🔔</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-item" onclick="showPage('dashboard-page')">Dashboard</div>
+                <div class="nav-item active">Marketplace</div>
+                <div class="nav-item" onclick="showPage('dompet-page')">Dompet & Transaksi</div>
+                <div class="nav-item" onclick="showPage('autozakat-page')">Auto Zakat</div>
+                <div class="nav-item" onclick="showPage('pengaturan-page')">Pengaturan</div>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="nav-item logout hero-badge" onclick="showPage('landing')">Logout</div>
+            </div>
+        </aside>
+
+        <main class="main-content mkt-main">
+            <div class="mobile-topbar">
+                <button class="hamburger-btn" onclick="openSidebar()">☰</button>
+                <span class="mobile-title">Marketplace</span>
+            </div>
+            <div class="mkt-header">
+                <h1>Jelajahi Aset Properti Syariah</h1>
+                <p>Pilih dari 100+ Properti Pilihan yang Telah Tervalidasi Syariah</p>
+            </div>
+
+            <div class="mkt-filters">
+                <button class="filter-chip active" onclick="setFilter(this)">Semua</button>
+                <button class="filter-chip" onclick="setFilter(this)">Banten</button>
+                <button class="filter-chip" onclick="setFilter(this)">Jakarta</button>
+                <button class="filter-chip" onclick="setFilter(this)">Yogyakarta</button>
+                <button class="filter-chip" onclick="setFilter(this)">Yield Tertinggi</button>
+                <button class="filter-chip" onclick="setFilter(this)">Token Tersedia</button>
+            </div>
+
+            <div class="mkt-grid">
+                <div class="mkt-card">
+                    <div class="mkt-card-img" style="background:linear-gradient(135deg,#a8edcc,#52b788)">
+                        <div class="mkt-token-badge badge-green">50 Token tersedia</div>
+                        <div class="mkt-card-specs">
+                            <span>🛏 3</span><span>🚿 2</span><span>📐 1950 m²</span>
+                        </div>
+                    </div>
+                    <div class="mkt-card-body">
+                        <div class="mkt-card-name">Villa Pantai Carita</div>
+                        <div class="mkt-card-loc">📍 Pandeglang, Banten</div>
+                    </div>
+                </div>
+                <div class="mkt-card">
+                    <div class="mkt-card-img" style="background:linear-gradient(135deg,#74b9ff,#0984e3)">
+                        <div class="mkt-token-badge badge-orange">10 Token tersedia</div>
+                        <div class="mkt-card-specs">
+                            <span>🛏 3</span><span>🚿 2</span><span>📐 1950 m²</span>
+                        </div>
+                    </div>
+                    <div class="mkt-card-body">
+                        <div class="mkt-card-name">Mambruk</div>
+                        <div class="mkt-card-loc">📍 Anyer, Banten</div>
+                    </div>
+                </div>
+                <div class="mkt-card">
+                    <div class="mkt-card-img" style="background:linear-gradient(135deg,#fdcb6e,#e17055)">
+                        <div class="mkt-token-badge badge-green">20 Token tersedia</div>
+                        <div class="mkt-card-specs">
+                            <span>🛏 3</span><span>🚿 2</span><span>📐 1950 m²</span>
+                        </div>
+                    </div>
+                    <div class="mkt-card-body">
+                        <div class="mkt-card-name">Villa Raja</div>
+                        <div class="mkt-card-loc">📍 Lebak, Banten</div>
+                    </div>
+                </div>
+                <div class="mkt-card">
+                    <div class="mkt-card-img" style="background:linear-gradient(135deg,#fd79a8,#6c5ce7)">
+                        <div class="mkt-token-badge badge-red">5 Token tersedia</div>
+                        <div class="mkt-card-specs">
+                            <span>🛏 3</span><span>🚿 2</span><span>📐 1950 m²</span>
+                        </div>
+                    </div>
+                    <div class="mkt-card-body">
+                        <div class="mkt-card-name">Aston Anyer</div>
+                        <div class="mkt-card-loc">📍 Anyer, Banten</div>
+                    </div>
+                </div>
+                <div class="mkt-card">
+                    <div class="mkt-card-img" style="background:linear-gradient(135deg,#55efc4,#00b894)">
+                        <div class="mkt-token-badge badge-orange">8 Token tersedia</div>
+                        <div class="mkt-card-specs">
+                            <span>🛏 3</span><span>🚿 2</span><span>📐 1950 m²</span>
+                        </div>
+                    </div>
+                    <div class="mkt-card-body">
+                        <div class="mkt-card-name">Villa Istaningku</div>
+                        <div class="mkt-card-loc">📍 Anyer, Banten</div>
+                    </div>
+                </div>
+                <div class="mkt-card">
+                    <div class="mkt-card-img" style="background:linear-gradient(135deg,#b2bec3,#636e72)">
+                        <div class="mkt-token-badge badge-green">50 Token tersedia</div>
+                        <div class="mkt-card-specs">
+                            <span>🛏 3</span><span>🚿 2</span><span>📐 1950 m²</span>
+                        </div>
+                    </div>
+                    <div class="mkt-card-body">
+                        <div class="mkt-card-name">Villa Bafa</div>
+                        <div class="mkt-card-loc">📍 Pandeglang, Banten</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mkt-load-more">
+                <button class="btn-outline-green" onclick="showToast('Memuat lebih banyak properti...')">Muat lebih banyak</button>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     DOMPET & TRANSAKSI PAGE
+═══════════════════════════════════════════ -->
+<div id="dompet-page" class="page">
+    <div class="app-layout">
+        <aside class="sidebar"><button class="sidebar-close-btn" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-top">
+                <img src="asset/logo.png" alt="HALPIN" class="sidebar-logo-img">
+                <div class="user-profile">
+                    <div class="user-avatar">SA</div>
+                    <div class="user-info">
+                        <span class="user-name">Siti Aisyah</span>
+                        <span class="user-notif">🔔</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-item" onclick="showPage('dashboard-page')">Dashboard</div>
+                <div class="nav-item" onclick="showPage('marketplace-page')">Marketplace</div>
+                <div class="nav-item active">Dompet & Transaksi</div>
+                <div class="nav-item" onclick="showPage('autozakat-page')">Auto Zakat</div>
+                <div class="nav-item" onclick="showPage('pengaturan-page')">Pengaturan</div>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="nav-item logout hero-badge" onclick="showPage('landing')">Logout</div>
+            </div>
+        </aside>
+
+        <main class="main-content dompet-main">
+            <!-- Header -->
+            <div class="dompet-page-header">
+                <button class="hamburger-btn" onclick="openSidebar()">☰</button>
+                <div>
+                    <h1>DOMPET & TRANSAKSI</h1>
+                    <p>Kelola saldo &amp; aktivitas keuangan</p>
+                </div>
+            </div>
+
+            <!-- Saldo Hero -->
+            <div class="saldo-hero-card">
+                <div class="saldo-hero-left">
+                    <div class="saldo-label">SALDO TERSEDIA</div>
+                    <div class="saldo-amount">Rp 12.450.000</div>
+                    <div class="saldo-usd">$762.40 USD</div>
+                    <div class="saldo-update">Terakhir diperbarui: Hari ini, 09.00</div>
+                </div>
+                <button class="btn-topup" onclick="showToast('Fitur Top Up akan segera tersedia!')">+ Top Up</button>
+            </div>
+
+            <!-- 4 mini stat -->
+            <div class="dompet-stats-grid">
+                <div class="dompet-stat">
+                    <div class="dompet-stat-label">TOTAL ASSET</div>
+                    <div class="dompet-stat-val">Rp 48,5 Jt</div>
+                    <div class="dompet-stat-sub up">↗ 12.4% bulan ini</div>
+                </div>
+                <div class="dompet-stat">
+                    <div class="dompet-stat-label">YIELD BERJALAN</div>
+                    <div class="dompet-stat-val">8,7%</div>
+                    <div class="dompet-stat-sub up">↗ p.a rata-rata</div>
+                </div>
+                <div class="dompet-stat">
+                    <div class="dompet-stat-label">MASUK BULAN INI</div>
+                    <div class="dompet-stat-val orange">+ 4,2 Jt</div>
+                    <div class="dompet-stat-sub">Dari distribusi sewa</div>
+                </div>
+                <div class="dompet-stat">
+                    <div class="dompet-stat-label">ZAKAT DIPOTONG</div>
+                    <div class="dompet-stat-val blue">Rp135rb</div>
+                    <div class="dompet-stat-sub blue-s">BAZNAS</div>
+                </div>
+            </div>
+
+            <!-- Bottom 2 kolom -->
+            <div class="dompet-bottom-grid">
+                <!-- Kiri: Rekening, Token, Chart -->
+                <div class="dompet-left-col">
+                    <!-- Rekening Bank -->
+                    <div class="dompet-card">
+                        <div class="dompet-card-header">
+                            <h2>Rekening Bank</h2>
+                            <button class="btn-link-green" onclick="showToast('Tambah rekening bank...')">+ Tambah</button>
+                        </div>
+                        <div class="rekening-item">
+                            <div class="rekening-logo">🏦</div>
+                            <div>
+                                <div class="rekening-bank">Bank Central Asia</div>
+                                <div class="rekening-nomor">****5678 · Siti Aisyah</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Token Saya -->
+                    <div class="dompet-card">
+                        <div class="dompet-card-header">
+                            <h2>Token Saya</h2>
+                            <a class="link-orange" onclick="showPage('marketplace-page')">Lihat semua</a>
+                        </div>
+                        <div class="token-list">
+                            <div class="token-row">
+                                <div class="perf-icon">🏠</div>
+                                <div class="token-info">
+                                    <div class="token-name">Villa Mutiara Sawarna <span class="token-yield">9,1%</span></div>
+                                    <div class="token-meta">Banten · 120 token</div>
+                                </div>
+                                <button class="btn-jual" onclick="showToast('Fungsi jual token segera hadir!')">JUAL</button>
+                            </div>
+                            <div class="token-row">
+                                <div class="perf-icon">🏠</div>
+                                <div class="token-info">
+                                    <div class="token-name">The Renhart <span class="token-yield">9,1%</span></div>
+                                    <div class="token-meta">Banten · 80 token</div>
+                                </div>
+                                <button class="btn-jual" onclick="showToast('Fungsi jual token segera hadir!')">JUAL</button>
+                            </div>
+                            <div class="token-row">
+                                <div class="perf-icon">🏠</div>
+                                <div class="token-info">
+                                    <div class="token-name">Geon Villa <span class="token-yield">9,1%</span></div>
+                                    <div class="token-meta">Banten · 47 token</div>
+                                </div>
+                                <button class="btn-jual" onclick="showToast('Fungsi jual token segera hadir!')">JUAL</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart Pertumbuhan Saldo -->
+                    <div class="dompet-card">
+                        <div class="dompet-card-header">
+                            <h2>Pertumbuhan Saldo</h2>
+                            <div class="chart-tabs">
+                                <button class="chart-tab" onclick="setChartTab(this)">24H</button>
+                                <button class="chart-tab active" onclick="setChartTab(this)">7D</button>
+                                <button class="chart-tab" onclick="setChartTab(this)">1M</button>
+                                <button class="chart-tab" onclick="setChartTab(this)">1Y</button>
+                            </div>
+                        </div>
+                        <div class="chart-meta">
+                            <div class="chart-val">$2,400.172</div>
+                            <div class="chart-currency">Currency <strong>USD</strong></div>
+                        </div>
+                        <!-- SVG mini chart -->
+                        <div class="chart-wrap">
+                            <svg viewBox="0 0 400 120" class="line-chart" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#52B788" stop-opacity="0.3"/>
+                                        <stop offset="100%" stop-color="#52B788" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,90 C30,85 50,70 80,60 C110,50 130,40 160,30 C190,20 200,15 220,18 C240,21 260,35 280,50 C300,65 320,70 350,60 C370,53 385,55 400,52" fill="none" stroke="#52B788" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M0,90 C30,85 50,70 80,60 C110,50 130,40 160,30 C190,20 200,15 220,18 C240,21 260,35 280,50 C300,65 320,70 350,60 C370,53 385,55 400,52 L400,120 L0,120 Z" fill="url(#chartGrad)"/>
+                                <!-- Dot aktif -->
+                                <circle cx="220" cy="18" r="5" fill="#E07B39"/>
+                                <line x1="220" y1="18" x2="220" y2="115" stroke="#E07B39" stroke-width="1" stroke-dasharray="3,3"/>
+                                <text x="200" y="14" font-size="9" fill="#E07B39" font-family="Poppins">$3,000</text>
+                                <!-- Y axis labels -->
+                                <text x="2" y="30" font-size="8" fill="#bbb" font-family="Poppins">$3000</text>
+                                <text x="2" y="60" font-size="8" fill="#bbb" font-family="Poppins">$2000</text>
+                                <text x="2" y="90" font-size="8" fill="#bbb" font-family="Poppins">$1000</text>
+                                <text x="2" y="115" font-size="8" fill="#bbb" font-family="Poppins">$100</text>
+                                <!-- X axis -->
+                                <text x="35" y="120" font-size="8" fill="#bbb" font-family="Poppins">Sep 1</text>
+                                <text x="90" y="120" font-size="8" fill="#bbb" font-family="Poppins">Sep 2</text>
+                                <text x="145" y="120" font-size="8" fill="#bbb" font-family="Poppins">Sep 3</text>
+                                <text x="200" y="120" font-size="8" fill="#E07B39" font-weight="bold" font-family="Poppins">Sep 4</text>
+                                <text x="255" y="120" font-size="8" fill="#bbb" font-family="Poppins">Sep 5</text>
+                                <text x="310" y="120" font-size="8" fill="#bbb" font-family="Poppins">Sep 6</text>
+                                <text x="360" y="120" font-size="8" fill="#bbb" font-family="Poppins">Sep 7</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kanan: Riwayat Transaksi -->
+                <div class="dompet-right-col">
+                    <div class="dompet-card">
+                        <div class="dompet-card-header">
+                            <h2>Riwayat Transaksi</h2>
+                            <div class="chart-tabs">
+                                <button class="chart-tab" onclick="setChartTab(this)">24H</button>
+                                <button class="chart-tab active" onclick="setChartTab(this)">7D</button>
+                                <button class="chart-tab" onclick="setChartTab(this)">1M</button>
+                                <button class="chart-tab" onclick="setChartTab(this)">1Y</button>
+                            </div>
+                        </div>
+                        <div class="tx-list">
+                            <div class="tx-row">
+                                <div class="tx-icon tx-in">↙</div>
+                                <div class="tx-info">
+                                    <div class="tx-name">Distribusi sewa</div>
+                                    <div class="tx-sub">Vil. Mutiara</div>
+                                </div>
+                                <div class="tx-right">
+                                    <div class="tx-amount in">Rp 650.000</div>
+                                    <div class="tx-date">26/3/26</div>
+                                </div>
+                            </div>
+                            <div class="tx-row">
+                                <div class="tx-icon tx-out">↗</div>
+                                <div class="tx-info">
+                                    <div class="tx-name">Beli Token</div>
+                                    <div class="tx-sub">Geon Villa</div>
+                                </div>
+                                <div class="tx-right">
+                                    <div class="tx-amount out">Rp. 2.000.000</div>
+                                    <div class="tx-date">15/3/26</div>
+                                </div>
+                            </div>
+                            <div class="tx-row">
+                                <div class="tx-icon tx-in">↙</div>
+                                <div class="tx-info">
+                                    <div class="tx-name">Distribusi sewa</div>
+                                    <div class="tx-sub">Vil. Mutiara</div>
+                                </div>
+                                <div class="tx-right">
+                                    <div class="tx-amount in">Rp 400.000</div>
+                                    <div class="tx-date">26/2/26</div>
+                                </div>
+                            </div>
+                            <div class="tx-row">
+                                <div class="tx-icon tx-out">↗</div>
+                                <div class="tx-info">
+                                    <div class="tx-name">Zakat</div>
+                                    <div class="tx-sub">BAZNAS</div>
+                                </div>
+                                <div class="tx-right">
+                                    <div class="tx-amount out">Rp 15.000</div>
+                                    <div class="tx-date">28/2/26</div>
+                                </div>
+                            </div>
+                            <div class="tx-row">
+                                <div class="tx-icon tx-out">↗</div>
+                                <div class="tx-info">
+                                    <div class="tx-name">Beli Token</div>
+                                    <div class="tx-sub">The Renhart</div>
+                                </div>
+                                <div class="tx-right">
+                                    <div class="tx-amount out">Rp 3.000.000</div>
+                                    <div class="tx-date">27/2/26</div>
+                                </div>
+                            </div>
+                            <div class="tx-row">
+                                <div class="tx-icon tx-in">↙</div>
+                                <div class="tx-info">
+                                    <div class="tx-name">Top up</div>
+                                    <div class="tx-sub">BCA</div>
+                                </div>
+                                <div class="tx-right">
+                                    <div class="tx-amount in">Rp 5.000.000</div>
+                                    <div class="tx-date">2.2.26</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AUTO ZAKAT PAGE
+═══════════════════════════════════════════ -->
+<div id="autozakat-page" class="page">
+    <div class="app-layout">
+        <aside class="sidebar"><button class="sidebar-close-btn" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-top">
+                <img src="asset/logo.png" alt="HALPIN" class="sidebar-logo-img">
+                <div class="user-profile">
+                    <div class="user-avatar">SA</div>
+                    <div class="user-info">
+                        <span class="user-name">Siti Aisyah</span>
+                        <span class="user-notif">🔔</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-item" onclick="showPage('dashboard-page')">Dashboard</div>
+                <div class="nav-item" onclick="showPage('marketplace-page')">Marketplace</div>
+                <div class="nav-item" onclick="showPage('dompet-page')">Dompet & Transaksi</div>
+                <div class="nav-item active">Auto Zakat</div>
+                <div class="nav-item" onclick="showPage('pengaturan-page')">Pengaturan</div>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="nav-item logout hero-badge" onclick="showPage('landing')">Logout</div>
+            </div>
+        </aside>
+
+        <main class="main-content az-main">
+            <div class="az-page-header">
+                <button class="hamburger-btn" onclick="openSidebar()">☰</button>
+                <div>
+                    <h1>AUTO ZAKAT</h1>
+                    <p>Zakat investasi 2,5% otomatis via smart contract</p>
+                </div>
+            </div>
+
+            <!-- Hero Zakat Card -->
+            <div class="az-hero-card">
+                <div class="az-hero-left">
+                    <!-- Donut besar -->
+                    <div class="az-donut-wrap">
+                        <svg viewBox="0 0 140 140" class="az-donut-svg">
+                            <circle cx="70" cy="70" r="54" fill="none" stroke="#f0f0f0" stroke-width="12"/>
+                            <circle cx="70" cy="70" r="54" fill="none" stroke="#E07B39" stroke-width="12"
+                                stroke-dasharray="339.3" stroke-dashoffset="330.9"
+                                stroke-linecap="round" transform="rotate(-90 70 70)"/>
+                            <circle cx="70" cy="70" r="44" fill="none" stroke="#2D6A4F" stroke-width="8"
+                                stroke-dasharray="276.5" stroke-dashoffset="220"
+                                stroke-linecap="round" transform="rotate(-90 70 70)"/>
+                        </svg>
+                        <div class="az-donut-center">
+                            <span class="az-donut-label">Auto</span>
+                            <span class="az-donut-val">2,5%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="az-hero-mid">
+                    <h2>ZAKAT MAL PROPERTI OTOMATIS</h2>
+                    <p>Smart Contract memotong 2,5% dari distribusi keuntungan sewa yang langsung disalurkan melalui lembaga BAZNAS resmi</p>
+                    <div class="az-hero-stats">
+                        <div class="az-hstat">
+                            <div class="az-hstat-val">Rp 1.215.000</div>
+                            <div class="az-hstat-lbl green">Total zakat 2026</div>
+                        </div>
+                        <div class="az-hstat">
+                            <div class="az-hstat-val">9/12</div>
+                            <div class="az-hstat-lbl">Haul berjalan</div>
+                        </div>
+                        <div class="az-hstat">
+                            <div class="az-hstat-val">NISAB</div>
+                            <div class="az-hstat-lbl green">Terpenuhi</div>
+                        </div>
+                        <div class="az-hstat">
+                            <div class="az-hstat-val">BAZNAS</div>
+                            <div class="az-hstat-lbl">Lembaga aktif</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="az-hero-right">
+                    <button class="btn-filled" onclick="showToast('Mengunduh laporan PDF...')">Unduh Laporan PDF</button>
+                    <button class="btn-outline-green az-btn-riwayat" onclick="showToast('Membuka riwayat zakat...')">Lihat Riwayat Zakat</button>
+                </div>
+            </div>
+
+            <!-- 4 status card -->
+            <div class="az-status-grid">
+                <div class="az-stat-card">
+                    <div class="az-stat-label">STATUS NISAB</div>
+                    <div class="az-stat-val green-big">TERPENUHI</div>
+                    <div class="az-stat-sub green">Aset > 85gr emas</div>
+                </div>
+                <div class="az-stat-card">
+                    <div class="az-stat-label">HAUL BERJALAN</div>
+                    <div class="az-stat-val">9 Bulan</div>
+                    <div class="az-stat-sub orange">3 bulan lagi</div>
+                </div>
+                <div class="az-stat-card">
+                    <div class="az-stat-label">DIPOTONG BULAN INI</div>
+                    <div class="az-stat-val blue">Rp 135.000</div>
+                    <div class="az-stat-sub">25 Maret 2026</div>
+                </div>
+                <div class="az-stat-card">
+                    <div class="az-stat-label">TOTAL DISALURKAN</div>
+                    <div class="az-stat-val green-big">Rp 1.215.000</div>
+                    <div class="az-stat-sub green">BAZNAS</div>
+                </div>
+            </div>
+
+            <!-- Bottom 2 kolom -->
+            <div class="az-bottom-grid">
+                <!-- Progress Haul -->
+                <div class="az-card">
+                    <div class="az-card-header">
+                        <h2>Progress Haul</h2>
+                        <span class="az-card-sub">Haul = 12 bulan kepemilikan</span>
+                    </div>
+                    <div class="az-haul-row">
+                        <span>Berjalan sejak Juni 2025</span>
+                        <span class="az-haul-pct">75% · 9/12 bulan</span>
+                    </div>
+                    <div class="az-haul-track">
+                        <div class="az-haul-fill" style="width:75%"></div>
+                    </div>
+                    <div class="az-months-row">
+                        <span>JUN</span><span>JUL</span><span>AGU</span><span>SEP</span>
+                        <span>OKT</span><span>NOV</span><span>DES</span><span>JAN</span>
+                        <span>FEB</span><span class="active-month">MAR</span><span>APR</span><span>MEI</span>
+                    </div>
+                    <div class="az-info-box">
+                        <strong>Zakat penuh mulai Juni 2025</strong>
+                        <p>Setelah genap 1 tahun haul, seluruh asset akan dihitung zakatnya secara tahunan penuh</p>
+                    </div>
+                </div>
+
+                <!-- Zakat per Properti -->
+                <div class="az-card">
+                    <h2 style="margin-bottom:20px">Zakat per Properti</h2>
+                    <div class="az-prop-zakat-list">
+                        <div class="az-prop-zakat-row">
+                            <div class="perf-icon">🏠</div>
+                            <div class="az-pz-info">
+                                <div class="az-pz-name">Villa Mutiara Sawarna</div>
+                                <div class="az-pz-meta">Banten · 120 token</div>
+                            </div>
+                            <div class="az-pz-progress">
+                                <div class="az-pz-bar-label"><span>Terisi</span><span>92%</span></div>
+                                <div class="progress-bar"><div class="fill" style="width:92%"></div></div>
+                            </div>
+                            <div class="az-pz-zakat">
+                                <div class="az-pz-zakat-val">48,5rb</div>
+                                <div class="az-pz-zakat-lbl">zakat/bln</div>
+                            </div>
+                        </div>
+                        <div class="az-prop-zakat-row">
+                            <div class="perf-icon">🏠</div>
+                            <div class="az-pz-info">
+                                <div class="az-pz-name">The Renhart</div>
+                                <div class="az-pz-meta">Banten · 80 token</div>
+                            </div>
+                            <div class="az-pz-progress">
+                                <div class="az-pz-bar-label"><span>Terisi</span><span>100%</span></div>
+                                <div class="progress-bar"><div class="fill" style="width:100%"></div></div>
+                            </div>
+                            <div class="az-pz-zakat">
+                                <div class="az-pz-zakat-val">57,5rb</div>
+                                <div class="az-pz-zakat-lbl">zakat/bln</div>
+                            </div>
+                        </div>
+                        <div class="az-prop-zakat-row">
+                            <div class="perf-icon">🏠</div>
+                            <div class="az-pz-info">
+                                <div class="az-pz-name">Geon Villa</div>
+                                <div class="az-pz-meta">Banten · 47 token</div>
+                            </div>
+                            <div class="az-pz-progress">
+                                <div class="az-pz-bar-label"><span>Terisi</span><span>74%</span></div>
+                                <div class="progress-bar"><div class="fill fill-yellow" style="width:74%"></div></div>
+                            </div>
+                            <div class="az-pz-zakat">
+                                <div class="az-pz-zakat-val">28,7rb</div>
+                                <div class="az-pz-zakat-lbl">zakat/bln</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PINA AI PAGE
+═══════════════════════════════════════════ -->
+<div id="pina-page" class="page">
+    <div class="app-layout">
+        <aside class="sidebar"><button class="sidebar-close-btn" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-top">
+                <img src="asset/logo.png" alt="HALPIN" class="sidebar-logo-img">
+                <div class="user-profile">
+                    <div class="user-avatar">SA</div>
+                    <div class="user-info">
+                        <span class="user-name">Siti Aisyah</span>
+                        <span class="user-notif">🔔</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-item" onclick="showPage('dashboard-page')">Dashboard</div>
+                <div class="nav-item" onclick="showPage('marketplace-page')">Marketplace</div>
+                <div class="nav-item" onclick="showPage('dompet-page')">Dompet & Transaksi</div>
+                <div class="nav-item" onclick="showPage('autozakat-page')">Auto Zakat</div>
+                <div class="nav-item" onclick="showPage('pengaturan-page')">Pengaturan</div>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="nav-item logout hero-badge" onclick="showPage('landing')">Logout</div>
+
+            </div>
+        </aside>
+
+        <main class="main-content pina-main">
+            <!-- PINA Header -->
+            <div class="pina-page-header">
+                <button class="hamburger-btn" onclick="openSidebar()">☰</button>
+                <div>
+                    <h1>PINA AI</h1>
+                    <p>Asisten investasi properti berbasis kecerdasan buatan</p>
+                </div>
+            </div>
+
+            <!-- Intro PINA -->
+            <div class="pina-intro-card">
+                <div class="pina-intro-img-wrap">
+                    <img src="asset/pina.png" alt="PINA" class="pina-intro-img">
+                </div>
+                <div class="pina-intro-text">
+                    <h2>Halo Siti, Saya PINA!</h2>
+                    <p>Property Intelligent Navigator Assistant – siap bantu kamu investasi lebih cerdas. Tanya jawab soal property, zakat, yield, atau tonton video edukasi dari saya.</p>
+                </div>
+            </div>
+
+            <!-- Chat + Video -->
+            <div class="pina-body-grid">
+                <!-- Chat -->
+                <div class="pina-chat-card">
+                    <div class="pina-chat-header">
+                        <div class="pina-chat-back" onclick="showPage('dashboard-page')">←</div>
+                        <div class="pina-online-wrap">
+                            <img src="asset/pina.png" alt="PINA" class="pina-chat-avatar">
+                            <div>
+                                <div class="pina-chat-name">PINA</div>
+                                <div class="pina-online">● Online</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pina-messages" id="pinaMessages">
+                        <div class="msg-bubble msg-user">Hai PINA,</div>
+                        <div class="msg-bubble msg-bot">Halo Siti! Ada yang bisa saya bantu?</div>
+                        <div class="msg-bubble msg-user">Apa itu haul dalam zakat?</div>
+                        <div class="msg-bubble msg-bot">Haul zakat adalah syarat wajib zakat harta (maal) di mana harta tersebut harus dimiliki secara penuh selama satu tahun hijriah (12 bulan qamariah). Haul menjamin harta telah mengendap, berkembang, dan stabil sebelum wajib dikeluarkan zakatnya. Sinonim atau istilah sepadan haul adalah assannah (satu tahun). Ada yang masih dibingungkan?</div>
+                    </div>
+
+                    <div class="pina-input-wrap">
+                        <input type="text" id="pinaInput" class="pina-input" placeholder="Tanya PINA sesuatu" onkeydown="if(event.key==='Enter') sendPinaMsg()">
+                        <button class="pina-send-btn" onclick="sendPinaMsg()">➤</button>
+                    </div>
+                </div>
+
+                <!-- Video Edukasi -->
+                <div class="pina-video-card">
+                    <h2>Video Edukasi</h2>
+                    <div class="video-list">
+                        <div class="video-item" onclick="showToast('Memutar: Apa itu Tokenisasi...')">
+                            <div class="video-thumb thumb-blue">▶</div>
+                            <div class="video-info">
+                                <div class="video-title">Apa itu Tokenisasi...</div>
+                                <div class="video-meta">PINA AI · 4:32 · Pemula</div>
+                            </div>
+                            <div class="video-badge badge-populer">POPULER</div>
+                        </div>
+                        <div class="video-item" onclick="showToast('Memutar: Cara Baca Yield & R...')">
+                            <div class="video-thumb thumb-green">▶</div>
+                            <div class="video-info">
+                                <div class="video-title">Cara Baca Yield & R...</div>
+                                <div class="video-meta">PINA AI · 6:10 · Menengah</div>
+                            </div>
+                            <div class="video-badge badge-baru">BARU</div>
+                        </div>
+                        <div class="video-item" onclick="showToast('Memutar: Zakat Investasi: Nisa...')">
+                            <div class="video-thumb thumb-yellow">▶</div>
+                            <div class="video-info">
+                                <div class="video-title">Zakat Investasi: Nisa...</div>
+                                <div class="video-meta">PINA AI · 5:45 · Pemula</div>
+                            </div>
+                            <div class="video-badge badge-baru">BARU</div>
+                        </div>
+                        <div class="video-item" onclick="showToast('Memutar: Blockchain untuk P...')">
+                            <div class="video-thumb thumb-pink">▶</div>
+                            <div class="video-info">
+                                <div class="video-title">Blockchain untuk P...</div>
+                                <div class="video-meta">PINA AI · 7:20 · Pemula</div>
+                            </div>
+                            <div class="video-badge badge-selesai">SELESAI</div>
+                        </div>
+                        <div class="video-item" onclick="showToast('Memutar: Strategi Diversifik...')">
+                            <div class="video-thumb thumb-purple">▶</div>
+                            <div class="video-info">
+                                <div class="video-title">Strategi Diversifik...</div>
+                                <div class="video-meta">PINA AI · 8:15 · Lanjutan</div>
+                            </div>
+                            <div class="video-badge badge-populer">POPULER</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PENGATURAN PAGE
+═══════════════════════════════════════════ -->
+<div id="pengaturan-page" class="page">
+    <div class="app-layout">
+        <aside class="sidebar"><button class="sidebar-close-btn" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-top">
+                <img src="asset/logo.png" alt="HALPIN" class="sidebar-logo-img">
+                <div class="user-profile">
+                    <div class="user-avatar">SA</div>
+                    <div class="user-info">
+                        <span class="user-name">Siti Aisyah</span>
+                        <span class="user-notif">🔔</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-item" onclick="showPage('dashboard-page')">Dashboard</div>
+                <div class="nav-item" onclick="showPage('marketplace-page')">Marketplace</div>
+                <div class="nav-item" onclick="showPage('dompet-page')">Dompet & Transaksi</div>
+                <div class="nav-item" onclick="showPage('autozakat-page')">Auto Zakat</div>
+                <div class="nav-item active">Pengaturan</div>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="nav-item logout hero-badge" onclick="showPage('landing')">Logout</div>
+            </div>
+        </aside>
+
+        <main class="main-content set-main">
+            <div class="set-page-header">
+                <button class="hamburger-btn" onclick="openSidebar()">☰</button>
+                <h1>Pengaturan</h1>
+            </div>
+            <hr class="set-divider">
+
+            <!-- Tabs -->
+            <div class="set-tabs">
+                <button class="set-tab active" onclick="switchSetTab(this, 'tab-akun')">Akun</button>
+                <button class="set-tab" onclick="switchSetTab(this, 'tab-keamanan')">Login & Keamanan</button>
+            </div>
+
+            <!-- Tab: Akun -->
+            <div id="tab-akun" class="set-tab-content">
+                <!-- Upload foto -->
+                <div class="set-photo-wrap">
+                    <div class="set-photo-box" onclick="showToast('Pilih foto profil...')">
+                        <span class="set-photo-icon">🖼️+</span>
+                        <span class="set-photo-label">Unggah foto anda</span>
+                    </div>
+                    <div class="set-field-label">Foto Profile</div>
+                </div>
+
+                <div class="set-form">
+                    <div class="set-field">
+                        <label>Nama Panjang</label>
+                        <input type="text" placeholder="Masukkan nama panjang anda" value="Siti Aisyah">
+                    </div>
+                    <div class="set-field">
+                        <label>Username</label>
+                        <input type="text" placeholder="Masukkan username anda" value="sitiaisyah">
+                    </div>
+                    <div class="set-field">
+                        <label>Email</label>
+                        <input type="email" placeholder="Masukkan email anda" value="siti@email.com">
+                    </div>
+                    <div class="set-field">
+                        <label>Nomor Telepon</label>
+                        <div class="set-phone-wrap">
+                            <span class="set-phone-prefix">+62</span>
+                            <input type="tel" placeholder="Masukkan nomor telepon anda" value="81234567890">
+                        </div>
+                    </div>
+                    <div class="set-actions">
+                        <button class="btn-save" onclick="showToast('Perubahan berhasil disimpan! ✓')">Simpan Perubahan</button>
+                        <button class="btn-reset" onclick="showToast('Form direset.')">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Login & Keamanan -->
+            <div id="tab-keamanan" class="set-tab-content" style="display:none">
+                <div class="set-form">
+                    <div class="set-field">
+                        <label>Kata Sandi Lama</label>
+                        <input type="password" placeholder="Masukkan kata sandi lama">
+                    </div>
+                    <div class="set-field">
+                        <label>Kata Sandi Baru</label>
+                        <input type="password" placeholder="Min. 8 karakter">
+                    </div>
+                    <div class="set-field">
+                        <label>Konfirmasi Kata Sandi Baru</label>
+                        <input type="password" placeholder="Ulangi kata sandi baru">
+                    </div>
+                    <div class="set-security-row">
+                        <div>
+                            <div class="set-sec-label">Autentikasi Dua Faktor (2FA)</div>
+                            <div class="set-sec-sub">Aktifkan 2FA untuk keamanan ekstra</div>
+                        </div>
+                        <div class="set-toggle" onclick="toggleSwitch(this)">
+                            <div class="set-toggle-knob"></div>
+                        </div>
+                    </div>
+                    <div class="set-actions">
+                        <button class="btn-save" onclick="showToast('Kata sandi berhasil diperbarui! ✓')">Simpan Perubahan</button>
+                        <button class="btn-reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<!-- TERMS & CONDITIONS MODAL -->
+<div id="terms-modal" class="modal-overlay">
+    <div class="modal-box">
+        <h2>Syarat & Ketentuan</h2>
+
+        <div class="tnc-content">
+
+            <label class="tnc-item">
+                <input type="checkbox" class="tnc-checkbox">
+                <span>Saya memahami bahwa HALPIN adalah platform investasi properti berbasis tokenisasi (RWA).</span>
+            </label>
+
+            <label class="tnc-item">
+                <input type="checkbox" class="tnc-checkbox">
+                <span>Saya memahami bahwa setiap token merepresentasikan kepemilikan aset nyata yang sesuai prinsip syariah.</span>
+            </label>
+
+            <label class="tnc-item">
+                <input type="checkbox" class="tnc-checkbox">
+                <span>Saya menyetujui bahwa investasi mengikuti prinsip fiqih muamalah (tanpa riba, gharar, dan maisir).</span>
+            </label>
+
+            <label class="tnc-item">
+                <input type="checkbox" class="tnc-checkbox">
+                <span>Saya memahami bahwa keuntungan investasi tidak dijamin dan memiliki risiko.</span>
+            </label>
+
+            <label class="tnc-item">
+                <input type="checkbox" class="tnc-checkbox">
+                <span>Saya menyetujui fitur Auto Zakat 2,5% yang akan dipotong otomatis saat mencapai nishab dan haul.</span>
+            </label>
+
+            <label class="tnc-item">
+                <input type="checkbox" class="tnc-checkbox">
+                <span>Saya memahami bahwa zakat akan disalurkan melalui lembaga resmi seperti BAZNAS.</span>
+            </label>
+
+            <label class="tnc-item">
+                <input type="checkbox" class="tnc-checkbox">
+                <span>Saya menyetujui bahwa perhitungan zakat dilakukan secara otomatis oleh sistem.</span>
+            </label>
+
+            <label class="tnc-item">
+                <input type="checkbox" class="tnc-checkbox">
+                <span>Saya telah membaca dan menyetujui kebijakan privasi serta keamanan data HALPIN.</span>
+            </label>
+
+        </div>
+
+        <!-- CHECKBOX UTAMA -->
+        <div class="tnc-agree-all">
+            <label>
+                <input type="checkbox" id="agreeAll" onchange="toggleAllTerms(this)">
+                Saya setuju dengan semua syarat & ketentuan
+            </label>
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn-text" onclick="closeTerms()">Batal</button>
+            <button class="btn-filled" id="agreeBtn" onclick="acceptTerms()" disabled>Saya Setuju</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<!-- PINA Float Global -->
+<div class="pina-float-app" id="pinaFloat">
+    <div class="pina-tooltip-app">Tanya PINA 🤖</div>
+    <div class="pina-bubble-app" onclick="showPage('pina-page')">
+        <img src="asset/pina.png" alt="PINA Logo" class="pina-img-icon">
+        <div class="pina-dot-app"></div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast-notif" id="toastNotif"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
