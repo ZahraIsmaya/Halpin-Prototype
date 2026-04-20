@@ -362,6 +362,7 @@ body {
     overflow-y: auto;
     border-right: 1px solid #f0f0f0;
     z-index: 250;
+    padding: 30px 20px 80px 20px;
 }
 .sidebar-logo-img { height: 40px; margin-bottom: 30px; }
 .user-profile {
@@ -386,7 +387,8 @@ body {
 
 .sidebar-nav { 
     flex: 1; 
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 .nav-item {
     padding: 12px 15px;
