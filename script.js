@@ -20,6 +20,9 @@ function showPage(id) {
 
     // Tutup sidebar saat navigasi (mobile)
     closeSidebar();
+    if (id === 'autozakat-page') {
+        setTimeout(() => drawGoldChart(goldPeriod), 80);
+    }
 }
 
 /* ----- MOBILE SIDEBAR ----- */
@@ -482,11 +485,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Gambar ulang chart saat halaman autozakat dibuka
-const _origShowPage = showPage;
-function showPage(id) {
-    _origShowPage(id);
-    if (id === 'autozakat-page') {
-        setTimeout(() => drawGoldChart(goldPeriod), 80);
-    }
-}
+
