@@ -357,9 +357,11 @@ body {
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
+
     position: fixed;
     height: 100vh;
-    overflow-y: auto;
+
+    overflow-y: auto; 
     border-right: 1px solid #f0f0f0;
     z-index: 250;
 }
@@ -386,8 +388,6 @@ body {
 
 .sidebar-nav { 
     flex: 1; 
-    overflow-y: auto;
-    padding-bottom: 80px; 
 }
 
 .sidebar-bottom {
