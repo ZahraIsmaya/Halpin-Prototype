@@ -358,7 +358,7 @@ body {
     display: flex;
     flex-direction: column;
     position: fixed;
-    height: 100vh;
+    height: 100dvh;
     overflow-y: auto;
     border-right: 1px solid #f0f0f0;
     z-index: 250;
