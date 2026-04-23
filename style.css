@@ -354,21 +354,21 @@ body {
 .sidebar {
     width: 260px;
     background: white;
-    padding: 30px 20px;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
     position: fixed;
+    top: 0;
+    left: 0;
     height: 100dvh;
-    overflow-y: hidden !important;
+    overflow: hidden;
     border-right: 1px solid #f0f0f0;
     z-index: 250;
 }
 .sidebar-bottom {
     flex-shrink: 0;
-    padding-top: 12px;
-    padding-bottom: env(safe-area-inset-bottom, 12px); /* iPhone safe area */
-    width: 100%;
+    padding: 12px 20px 20px;
+    background: white;
 }
 
 .sidebar-logo-img { height: 40px; margin-bottom: 30px; }
@@ -393,10 +393,17 @@ body {
 .user-notif { margin-left: auto; cursor: pointer; }
 
 .sidebar-nav { 
-    flex: 1; 
+    flex: 1;
     overflow-y: auto;
     min-height: 0;
+    padding: 0 20px;
 }
+
+.sidebar-top {
+    padding: 30px 20px 0;
+    flex-shrink: 0;
+}
+
 .nav-item {
     padding: 12px 15px;
     border-radius: 12px;
@@ -418,16 +425,15 @@ body {
     font-weight: 600;
     justify-content: center;
     border-radius: 12px;
-    padding: 12px;
-    margin-top: 10px;
-    margin-bottom: 0;
+    padding: 12px 15px;
     width: 100%;
     box-sizing: border-box;
-    
-    /* Override hero-badge yang bermasalah */
     display: flex;
     position: static;
     font-size: 14px;
+    margin: 0;
+    gap: 0;
+    cursor: pointer;
 }
 
 .nav-item.logout:hover {
