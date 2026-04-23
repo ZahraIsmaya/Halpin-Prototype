@@ -486,3 +486,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function confirmLogout() {
+    document.getElementById("logoutModal").style.display = "flex";
+}
+
+function closeLogout() {
+    document.getElementById("logoutModal").style.display = "none";
+}
+
+function logoutNow() {
+    // arahkan ke landing / login
+    showPage('landing');
+
+    // tutup modal
+    closeLogout();
+}
+
