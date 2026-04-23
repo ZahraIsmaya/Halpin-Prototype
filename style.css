@@ -387,6 +387,16 @@ body {
 .sidebar-nav { 
     flex: 1; 
     overflow-y: auto;
+    padding-bottom: 80px; 
+}
+
+.sidebar-bottom {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 10;
 }
 .nav-item {
     padding: 12px 15px;
