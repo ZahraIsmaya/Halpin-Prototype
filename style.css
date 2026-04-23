@@ -354,23 +354,15 @@ body {
 .sidebar {
     width: 260px;
     background: white;
-    padding: 0;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0;
-    left: 0;
-    height: 100dvh;
-    overflow: hidden;
+    height: 100vh;
+    overflow-y: auto;
     border-right: 1px solid #f0f0f0;
     z-index: 250;
 }
-.sidebar-bottom {
-    flex-shrink: 0;
-    padding: 12px 20px 20px;
-    background: white;
-}
-
 .sidebar-logo-img { height: 40px; margin-bottom: 30px; }
 .user-profile {
     background: #FFF5EE;
@@ -393,17 +385,9 @@ body {
 .user-notif { margin-left: auto; cursor: pointer; }
 
 .sidebar-nav { 
-    flex: 1;
+    flex: 1; 
     overflow-y: auto;
-    min-height: 0;
-    padding: 0 20px;
 }
-
-.sidebar-top {
-    padding: 30px 20px 0;
-    flex-shrink: 0;
-}
-
 .nav-item {
     padding: 12px 15px;
     border-radius: 12px;
@@ -419,27 +403,8 @@ body {
 }
 .nav-item:hover { background: #f5f5f5; color: var(--text-dark); }
 .nav-item.active { background: #E07B39; color: white; }
-.nav-item.logout {
-    background: #e05252;
-    color: white !important;
-    font-weight: 600;
-    justify-content: center;
-    border-radius: 12px;
-    padding: 12px 15px;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    position: static;
-    font-size: 14px;
-    margin: 0;
-    gap: 0;
-    cursor: pointer;
-}
-
-.nav-item.logout:hover {
-    background: #c23b3b;
-    color: white !important;
-}
+.nav-item.logout { color: #ffffff; margin-top: 10px; }
+.nav-item.logout:hover { background: #fff0f0; color: #e05252; }
 
 .sidebar-pina-box img {
     width: 100%;
