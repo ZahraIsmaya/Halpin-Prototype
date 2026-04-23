@@ -357,12 +357,20 @@ body {
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 16px;
     position: fixed;
     height: 100dvh;
     overflow-y: auto;
     border-right: 1px solid #f0f0f0;
     z-index: 250;
 }
+.sidebar-bottom {
+    width: 100%;
+    padding-top: 16px;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
 .sidebar-logo-img { height: 40px; margin-bottom: 30px; }
 .user-profile {
     background: #FFF5EE;
