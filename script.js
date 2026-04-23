@@ -25,6 +25,7 @@ function showPage(id) {
     }
 }
 
+
 /* ----- MOBILE SIDEBAR ----- */
 function openSidebar() {
     // Temukan sidebar di dalam halaman aktif
@@ -484,5 +485,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
 
