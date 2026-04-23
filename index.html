@@ -20,7 +20,7 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="logo" onclick="showPage('landing')">
-                <img src="./asset/logo.png" alt="HALPIN Logo" class="logo-img">
+                <img src="asset/logo.png" alt="HALPIN Logo" class="logo-img">
             </div>
             <div class="nav-links">
                 <a onclick="showPage('landing')">Beranda</a>
@@ -104,6 +104,112 @@
                 <div class="step-icon">📈</div>
                 <div class="step-title">Terima Hasil</div>
                 <div class="step-desc">Nikmati bagi hasil otomatis bulanan dan pantau portofolio via dashboard.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ KALKULATOR PROYEKSI INVESTASI ═══ -->
+    <div class="calc-section">
+        <div class="calc-inner">
+            <div class="calc-header-text">
+                <div class="section-tag">KALKULATOR INVESTASI</div>
+                <h2 class="section-title">Proyeksikan Hasil & Zakat Anda</h2>
+                <p class="section-sub">Simulasikan potensi imbal hasil dan zakat otomatis berdasarkan jumlah investasi Anda.</p>
+            </div>
+
+            <div class="calc-body">
+                <!-- Panel Kiri: Input -->
+                <div class="calc-inputs">
+                    <div class="calc-field">
+                        <label class="calc-label">Pilih Properti</label>
+                        <select class="calc-select" id="calcSelect" onchange="runCalc()">
+                            <option value="9">Villa Pantai Carita – Banten (9% ERY)</option>
+                            <option value="8.1">The Renhart – Banten (8,1% ERY)</option>
+                            <option value="9.2">Villa Mutiara Sawarna – Banten (9,2% ERY)</option>
+                            <option value="7.8">Geon Villa – Banten (7,8% ERY)</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-field">
+                        <label class="calc-label">Jumlah Investasi (IDR)</label>
+                        <div class="calc-input-wrap">
+                            <span class="calc-prefix">Rp</span>
+                            <input type="number" id="calcAmount" class="calc-input"
+                                value="20000000" min="10000" step="10000" oninput="runCalc()">
+                        </div>
+                        <div class="calc-token-info" id="calcTokenInfo">= 2.000 Token</div>
+                    </div>
+                    <div class="calc-field">
+                        <label class="calc-label">Jangka Waktu</label>
+                        <div class="calc-duration-tabs">
+                            <button class="calc-dur-btn active" onclick="setDuration(this,1)">1 Tahun</button>
+                            <button class="calc-dur-btn" onclick="setDuration(this,3)">3 Tahun</button>
+                            <button class="calc-dur-btn" onclick="setDuration(this,5)">5 Tahun</button>
+                        </div>
+                    </div>
+
+                    <div class="calc-field">
+                        <label class="calc-label">Expected Rental Yield (ERY)</label>
+                        <div class="calc-ery-row">
+                            <div class="calc-ery-bar-wrap">
+                                <div class="calc-ery-bar" id="calcEryBar" style="width:75%"></div>
+                            </div>
+                            <span class="calc-ery-val" id="calcEryVal">9%</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-note">
+                        ⚠️ Kalkulator ini hanya untuk ilustrasi. Imbal hasil aktual dapat berbeda. 1 token = Rp 10.000.
+                    </div>
+                </div>
+
+                <!-- Panel Kanan: Hasil -->
+                <div class="calc-results">
+                    <div class="calc-res-top">
+                        <div class="calc-res-label">Proyeksi Pendapatan</div>
+                        <div class="calc-res-sub" id="calcResDesc">Investasi Rp 20.000.000 selama 1 tahun</div>
+                        <div class="calc-res-token" id="calcResToken">= 2.000 Token</div>
+                    </div>
+
+                    <div class="calc-res-main">
+                        <div class="calc-res-card calc-res-yield">
+                            <div class="calc-res-card-icon">📈</div>
+                            <div class="calc-res-card-body">
+                                <div class="calc-res-card-label">Estimasi Imbal Hasil</div>
+                                <div class="calc-res-card-val" id="calcYieldVal">Rp 1.800.000</div>
+                                <div class="calc-res-card-sub" id="calcYieldSub">dalam 1 tahun</div>
+                            </div>
+                        </div>
+                        <div class="calc-res-card calc-res-zakat">
+                            <div class="calc-res-card-icon">📜</div>
+                            <div class="calc-res-card-body">
+                                <div class="calc-res-card-label">Auto Zakat (2,5%)</div>
+                                <div class="calc-res-card-val" id="calcZakatVal">Rp 45.000</div>
+                                <div class="calc-res-card-sub">otomatis ke BAZNAS</div>
+                            </div>
+                        </div>
+                        <div class="calc-res-card calc-res-bersih">
+                            <div class="calc-res-card-icon">💰</div>
+                            <div class="calc-res-card-body">
+                                <div class="calc-res-card-label">Pendapatan Bersih</div>
+                                <div class="calc-res-card-val" id="calcBersihVal">Rp 1.755.000</div>
+                                <div class="calc-res-card-sub" id="calcBersihSub">setelah zakat</div>
+                            </div>
+                        </div>
+                        <div class="calc-res-card calc-res-total">
+                            <div class="calc-res-card-icon">🏦</div>
+                            <div class="calc-res-card-body">
+                                <div class="calc-res-card-label">Total Aset</div>
+                                <div class="calc-res-card-val" id="calcTotalVal">Rp 21.755.000</div>
+                                <div class="calc-res-card-sub" id="calcTotalSub">modal + bersih</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="calc-cta-btn" onclick="openModal('register')">
+                        Mulai Investasi Sekarang →
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -899,13 +1005,62 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ═══ GRAFIK HARGA EMAS ═══ -->
+            <div class="gold-chart-section">
+                <div class="gold-chart-header">
+                    <div class="gold-chart-title-wrap">
+                        <div class="gold-icon">🥇</div>
+                        <div>
+                            <h2>Harga Emas & Nisab Zakat</h2>
+                            <p>Harga emas Antam per gram · Nisab = 85 gram emas</p>
+                        </div>
+                    </div>
+                    <div class="gold-stats-row">
+                        <div class="gold-stat">
+                            <div class="gold-stat-label">Harga Saat Ini</div>
+                            <div class="gold-stat-val" id="goldCurrentPrice">Rp 1.587.000</div>
+                            <div class="gold-stat-sub gold-up">↑ +0,8% hari ini</div>
+                        </div>
+                        <div class="gold-stat">
+                            <div class="gold-stat-label">Nisab (85 gr)</div>
+                            <div class="gold-stat-val" id="goldNisabVal">Rp 134.895.000</div>
+                            <div class="gold-stat-sub">batas wajib zakat</div>
+                        </div>
+                        <div class="gold-stat">
+                            <div class="gold-stat-label">Status Nisab Anda</div>
+                            <div class="gold-stat-val gold-green">TERPENUHI ✓</div>
+                            <div class="gold-stat-sub">Aset Rp 48,5 Jt > Nisab</div>
+                        </div>
+                        <div class="gold-period-tabs">
+                            <button class="gold-tab active" onclick="setGoldPeriod(this,'1M')">1B</button>
+                            <button class="gold-tab" onclick="setGoldPeriod(this,'3M')">3B</button>
+                            <button class="gold-tab" onclick="setGoldPeriod(this,'6M')">6B</button>
+                            <button class="gold-tab" onclick="setGoldPeriod(this,'1Y')">1T</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SVG Chart area -->
+                <div class="gold-chart-wrap">
+                    <canvas id="goldChartCanvas" class="gold-canvas"></canvas>
+                    <!-- Nisab line label -->
+                    <div class="gold-nisab-label" id="goldNisabLine">
+                        <span>Nisab: Rp 1.587.000/gr</span>
+                    </div>
+                </div>
+
+                <div class="gold-chart-footer">
+                    <div class="gold-legend-item"><span class="gold-legend-dot dot-gold"></span> Harga Emas Antam</div>
+                    <div class="gold-legend-item"><span class="gold-legend-dot dot-nisab"></span> Harga Nisab per gram</div>
+                    <div class="gold-source">Sumber data: ilustrasi · update harian</div>
+                </div>
+            </div>
+
         </main>
     </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     PINA AI PAGE
-═══════════════════════════════════════════ -->
 <div id="pina-page" class="page">
     <div class="app-layout">
         <aside class="sidebar"><button class="sidebar-close-btn" onclick="closeSidebar()">✕</button>
@@ -1223,6 +1378,6 @@
 <!-- Toast -->
 <div class="toast-notif" id="toastNotif"></div>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
