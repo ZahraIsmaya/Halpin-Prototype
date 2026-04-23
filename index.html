@@ -596,15 +596,35 @@
             </div>
 
             <!-- Saldo Hero -->
-            <div class="saldo-hero-card">
-                <div class="saldo-hero-left">
-                    <div class="saldo-label">SALDO TERSEDIA</div>
-                    <div class="saldo-amount">Rp 12.450.000</div>
-                    <div class="saldo-usd">$762.40 USD</div>
-                    <div class="saldo-update">Terakhir diperbarui: Hari ini, 09.00</div>
-                </div>
-                <button class="btn-topup" onclick="showToast('Fitur Top Up akan segera tersedia!')">+ Top Up</button>
-            </div>
+            <div class="saldo-hero-wrapper">
+
+    <!-- LEFT: DIVIDEN -->
+    <div class="saldo-hero-card">
+        <div class="saldo-hero-left">
+            <div class="saldo-label">TOTAL ASSET</div>
+            <div class="saldo-amount">Rp 545.000.000</div>
+            <div class="saldo-usd">$31.523,84 USD</div>
+            <div class="saldo-update">Dari distribusi sewa</div>
+        </div>
+        <button class="btn-topup" onclick="showToast('Fitur Withdraw akan segera tersedia!')">
+            Withdraw
+        </button>
+    </div>
+
+    <!-- RIGHT: SALDO -->
+    <div class="saldo-hero-card">
+        <div class="saldo-hero-left">
+            <div class="saldo-label">SALDO TERSEDIA</div>
+            <div class="saldo-amount">Rp 12.450.000</div>
+            <div class="saldo-usd">$762.40 USD</div>
+            <div class="saldo-update">Terakhir diperbarui: Hari ini, 09.00</div>
+        </div>
+        <button class="btn-topup" onclick="showToast('Fitur Top Up akan segera tersedia!')">
+            + Top Up
+        </button>
+    </div>
+
+</div>
 
             <!-- 4 mini stat -->
             <div class="dompet-stats-grid">
@@ -625,8 +645,8 @@
                 </div>
                 <div class="dompet-stat">
                     <div class="dompet-stat-label">ZAKAT DIPOTONG</div>
-                    <div class="dompet-stat-val blue">Rp135rb</div>
-                    <div class="dompet-stat-sub blue-s">BAZNAS</div>
+                    <div class="dompet-stat-val blue">Rp5.45jt</div>
+                    <div class="dompet-stat-sub blue-s">Rumah Zakat</div>
                 </div>
             </div>
 
@@ -1019,12 +1039,12 @@
                     <div class="gold-stats-row">
                         <div class="gold-stat">
                             <div class="gold-stat-label">Harga Saat Ini</div>
-                            <div class="gold-stat-val" id="goldCurrentPrice">Rp 1.587.000</div>
+                            <div class="gold-stat-val" id="goldCurrentPrice">Rp 2.655.000</div>
                             <div class="gold-stat-sub gold-up">↑ +0,8% hari ini</div>
                         </div>
                         <div class="gold-stat">
                             <div class="gold-stat-label">Nisab (85 gr)</div>
-                            <div class="gold-stat-val" id="goldNisabVal">Rp 134.895.000</div>
+                            <div class="gold-stat-val" id="goldNisabVal">Rp 225.675.000</div>
                             <div class="gold-stat-sub">batas wajib zakat</div>
                         </div>
                         <div class="gold-stat">
@@ -1046,7 +1066,7 @@
                     <canvas id="goldChartCanvas" class="gold-canvas"></canvas>
                     <!-- Nisab line label -->
                     <div class="gold-nisab-label" id="goldNisabLine">
-                        <span>Nisab: Rp 1.587.000/gr</span>
+                        <span>Nisab: Rp 2.655.000/gr</span>
                     </div>
                 </div>
 
@@ -1363,9 +1383,6 @@
     </div>
 </div>
 
-</body>
-</html>
-
 <!-- PINA Float Global -->
 <div class="pina-float-app" id="pinaFloat">
     <div class="pina-tooltip-app">Tanya PINA 🤖</div>
@@ -1379,5 +1396,6 @@
 <div class="toast-notif" id="toastNotif"></div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
